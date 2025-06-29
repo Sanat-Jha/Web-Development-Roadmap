@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Development Roadmap 2025 | Zero to Hero Guide</title>
+    <title>Jump Into the World of Web Development in 2025</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Calligraffitti&family=Edu+NSW+ACT+Foundation:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#10002b',
-                        secondary: '#3c096c',
-                        tertiary: '#7b2cbf',
-                        accent: '#c77dff'
+                        'bg-main': '#c77dff',
+                        'card-primary': '#3c096c',
+                        'card-secondary': '#7b2cbf',
+                        'text-main': '#10002b',
+                        'border-color': '#10002b'
                     },
                     fontFamily: {
-                        'dancing': ['Dancing Script', 'cursive'],
-                        'playfair': ['Playfair Display', 'serif'],
+                        'calligraffitti': ['Calligraffitti', 'cursive'],
+                        'edu-nsw': ['Edu NSW ACT Foundation', 'cursive'],
                         'inter': ['Inter', 'sans-serif']
                     }
                 }
@@ -26,284 +31,943 @@
         }
     </script>
     <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #10002b 0%, #3c096c 35%, #7b2cbf 70%, #c77dff 100%);
+        body {
+            background-color: #c77dff;
+            color: #10002b;
         }
-        
-        .glass-effect {
-            backdrop-filter: blur(20px);
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
-        
-        .floating {
-            animation: floating 3s ease-in-out infinite;
+
+        .arrow-bounce {
+            animation: bounce 2s infinite;
         }
-        
-        .slide-in-left {
-            animation: slideInLeft 1s ease-out forwards;
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .icon-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .card-primary {
+            background-color: #3c096c;
+            border: 1px solid #10002b;
+            color: white;
+        }
+
+        .card-secondary {
+            background-color: #7b2cbf;
+            border: 1px solid #10002b;
+            color: white;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
             opacity: 0;
-            transform: translateX(-50px);
         }
-        
-        .slide-in-right {
-            animation: slideInRight 1s ease-out forwards;
-            opacity: 0;
-            transform: translateX(50px);
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
         }
-        
-        .fade-in-up {
-            animation: fadeInUp 1s ease-out forwards;
+
+        .slide-up {
+            animation: slideUp 0.8s ease-out forwards;
             opacity: 0;
             transform: translateY(30px);
         }
-        
-        @keyframes floating {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        @keyframes slideInLeft {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes slideInRight {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes fadeInUp {
+
+        @keyframes slideUp {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
-        .animated-card {
-            transition: all 0.3s ease;
+
+        .process-arrow {
+            position: relative;
         }
-        
-        .animated-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(199, 125, 255, 0.2);
+
+        .process-arrow::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 15px solid #10002b;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
         }
-        
-        .tech-badge {
-            transition: all 0.3s ease;
+
+        .process-arrow:last-child::after {
+            display: none;
         }
-        
-        .tech-badge:hover {
-            transform: scale(1.05);
-            background: linear-gradient(45deg, #c77dff, #7b2cbf);
+
+        @media (max-width: 768px) {
+            .process-arrow::after {
+                display: none;
+            }
+        }
+
+        .code-block {
+            background: rgba(199, 125, 255, 0.1);
+            border-left: 4px solid #c77dff;
+        }
+
+        .table-container {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(199, 125, 255, 0.2);
         }
     </style>
 </head>
-<body class="font-inter bg-primary text-white overflow-x-hidden">
+
+<body class="font-inter">
     <!-- Hero Section -->
-    <section class="gradient-bg min-h-screen flex items-center justify-center relative overflow-hidden">
-        <!-- Animated Background Elements -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="floating absolute top-20 left-10 w-20 h-20 bg-accent rounded-full"></div>
-            <div class="floating absolute top-40 right-20 w-16 h-16 bg-tertiary rounded-full" style="animation-delay: -1s;"></div>
-            <div class="floating absolute bottom-20 left-1/4 w-12 h-12 bg-accent rounded-full" style="animation-delay: -2s;"></div>
-            <div class="floating absolute bottom-40 right-1/3 w-24 h-24 bg-secondary rounded-full" style="animation-delay: -0.5s;"></div>
+    <section class="hero-section px-6 relative">
+        <!-- Floating Icons -->
+        <div class="absolute top-20 left-10 icon-float">
+            <i class="fas fa-code text-4xl text-text-main opacity-20"></i>
         </div>
-        
-        <div class="container mx-auto px-6 text-center relative z-10">
-            <h1 class="font-playfair text-6xl md:text-8xl font-bold mb-6 slide-in-left">
-                Web Development
-                <span class="font-dancing text-accent block text-5xl md:text-7xl">Roadmap 2025</span>
+        <div class="absolute top-32 right-16 icon-float" style="animation-delay: 1s;">
+            <i class="fas fa-laptop-code text-3xl text-text-main opacity-20"></i>
+        </div>
+        <div class="absolute bottom-32 left-20 icon-float" style="animation-delay: 2s;">
+            <i class="fas fa-database text-3xl text-text-main opacity-20"></i>
+        </div>
+        <div class="absolute bottom-20 right-12 icon-float" style="animation-delay: 0.5s;">
+            <i class="fas fa-server text-4xl text-text-main opacity-20"></i>
+        </div>
+
+        <div class="text-center max-w-6xl mx-auto">
+            <h1 class="font-calligraffitti text-6xl md:text-8xl font-bold mb-8 fade-in">
+                Jump Into the World of Web Development in 2025
             </h1>
-            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto slide-in-right opacity-90" style="animation-delay: 0.5s;">
-                Your friendly guide to go from <span class="text-accent font-semibold">zero to hero</span> in web development
+
+            <div class="text-xl md:text-2xl mb-8 fade-in" style="animation-delay: 0.3s;">
+                <p class="font-semibold">by <a href="https://sanatjha.me" class="underline hover:no-underline">Sanat
+                        Jha</a></p>
+            </div>
+
+            <p class="text-lg md:text-xl max-w-4xl mx-auto mb-12 fade-in" style="animation-delay: 0.6s;">
+                This web development roadmap is your friendly guide for beginners who want to go from zero to hero in
+                web development. Here's how you can get started, what you should focus on, and some real talk about what
+                matters in today's industry.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in-up" style="animation-delay: 1s;">
-                <button class="bg-accent hover:bg-opacity-80 text-primary font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105">
-                    Start Your Journey
-                </button>
-                <button class="glass-effect hover:bg-opacity-20 border-accent text-accent font-semibold px-8 py-4 rounded-full transition-all duration-300">
-                    View Roadmap
-                </button>
-            </div>
-        </div>
-        
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-        </div>
-    </section>
 
-    <!-- Important Points Section -->
-    <section class="py-20 bg-secondary">
-        <div class="container mx-auto px-6">
-            <h2 class="font-playfair text-5xl font-bold text-center mb-16 text-accent">
-                Essential <span class="font-dancing">Insights</span>
-            </h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="animated-card glass-effect p-6 rounded-2xl">
-                    <div class="text-accent text-4xl mb-4">🚀</div>
-                    <h3 class="font-playfair text-xl font-semibold mb-3">Beyond Web Dev</h3>
-                    <p class="text-sm opacity-90">Don't treat web development as the only goal. Use it as a foundation to explore other tech fields.</p>
+            <!-- Process Flow -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12 fade-in" style="animation-delay: 0.9s;">
+                <div class="card-primary p-6 rounded-lg text-center process-arrow">
+                    <i class="fas fa-play-circle text-3xl mb-3"></i>
+                    <h3 class="font-edu-nsw text-xl font-bold mb-2">Start Here</h3>
+                    <p class="text-sm">HTML, CSS & JavaScript Basics</p>
                 </div>
-                <div class="animated-card glass-effect p-6 rounded-2xl">
-                    <div class="text-accent text-4xl mb-4">💡</div>
-                    <h3 class="font-playfair text-xl font-semibold mb-3">Beyond Basics</h3>
-                    <p class="text-sm opacity-90">HTML & CSS are just the alphabet. Real web development goes way beyond that.</p>
+
+                <div class="card-primary p-6 rounded-lg text-center process-arrow">
+                    <i class="fas fa-tools text-3xl mb-3"></i>
+                    <h3 class="font-edu-nsw text-xl font-bold mb-2">Build Projects</h3>
+                    <p class="text-sm">Practice with Real Applications</p>
                 </div>
-                <div class="animated-card glass-effect p-6 rounded-2xl">
-                    <div class="text-accent text-4xl mb-4">🆓</div>
-                    <h3 class="font-playfair text-xl font-semibold mb-3">Learn for Free</h3>
-                    <p class="text-sm opacity-90">YouTube is packed with quality tutorials, and AI tools can answer your questions instantly.</p>
+
+                <div class="card-primary p-6 rounded-lg text-center process-arrow">
+                    <i class="fas fa-server text-3xl mb-3"></i>
+                    <h3 class="font-edu-nsw text-xl font-bold mb-2">Learn Backend</h3>
+                    <p class="text-sm">APIs, Databases & Server Logic</p>
                 </div>
-                <div class="animated-card glass-effect p-6 rounded-2xl">
-                    <div class="text-accent text-4xl mb-4">🤖</div>
-                    <h3 class="font-playfair text-xl font-semibold mb-3">AI-Powered</h3>
-                    <p class="text-sm opacity-90">Use AI smartly. In the real world, developers use AI to speed up their work.</p>
+
+                <div class="card-primary p-6 rounded-lg text-center">
+                    <i class="fas fa-rocket text-3xl mb-3"></i>
+                    <h3 class="font-edu-nsw text-xl font-bold mb-2">Specialize</h3>
+                    <p class="text-sm">Choose Your Development Path</p>
                 </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="arrow-bounce fade-in" style="animation-delay: 1.2s;">
+                <i class="fas fa-chevron-down text-2xl"></i>
+                <p class="text-sm mt-2">Scroll to explore the roadmap</p>
             </div>
         </div>
     </section>
 
-    <!-- Tech Stack Section -->
-    <section class="py-20 bg-tertiary">
-        <div class="container mx-auto px-6">
-            <h2 class="font-playfair text-5xl font-bold text-center mb-16">
-                <span class="font-dancing text-accent">Tech Stacks</span> You Should Know
-            </h2>
-            
-            <div class="grid lg:grid-cols-3 gap-12">
-                <!-- Frontend -->
-                <div class="glass-effect p-8 rounded-2xl">
-                    <h3 class="font-playfair text-3xl font-bold mb-6 text-accent">Frontend</h3>
-                    <div class="space-y-3">
-                        <div class="tech-badge bg-primary p-3 rounded-lg">HTML, CSS, JavaScript</div>
-                        <div class="tech-badge bg-primary p-3 rounded-lg">Tailwind, Bootstrap, ShadCN</div>
-                        <div class="tech-badge bg-primary p-3 rounded-lg">React, Next.js, Angular, Vue.js</div>
-                    </div>
-                </div>
-                
-                <!-- Backend -->
-                <div class="glass-effect p-8 rounded-2xl">
-                    <h3 class="font-playfair text-3xl font-bold mb-6 text-accent">Backend</h3>
-                    <div class="space-y-3">
-                        <div class="tech-badge bg-primary p-3 rounded-lg">Node.js, Express</div>
-                        <div class="tech-badge bg-primary p-3 rounded-lg">Django, Flask</div>
-                        <div class="tech-badge bg-primary p-3 rounded-lg">Laravel, Spring Boot</div>
-                        <div class="tech-badge bg-primary p-3 rounded-lg">Go, Rust</div>
-                    </div>
-                </div>
-                
-                <!-- Database -->
-                <div class="glass-effect p-8 rounded-2xl">
-                    <h3 class="font-playfair text-3xl font-bold mb-6 text-accent">Database</h3>
-                    <div class="space-y-3">
-                        <div class="tech-badge bg-primary p-3 rounded-lg">SQLite, PostgreSQL</div>
-                        <div class="tech-badge bg-primary p-3 rounded-lg">MongoDB, MySQL</div>
-                        <div class="tech-badge bg-primary p-3 rounded-lg">Redis, DynamoDB</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-16 max-w-4xl">
 
-    <!-- Learning Journey Section -->
-    <section class="py-20 bg-primary">
-        <div class="container mx-auto px-6">
-            <h2 class="font-playfair text-5xl font-bold text-center mb-16">
-                Your <span class="font-dancing text-accent">Learning Journey</span>
-            </h2>
-            
-            <div class="max-w-4xl mx-auto">
-                <!-- Timeline -->
-                <div class="relative">
-                    <div class="absolute left-8 top-0 bottom-0 w-1 bg-accent"></div>
-                    
-                    <div class="space-y-12">
-                        <!-- Day 1 -->
-                        <div class="relative flex items-start">
-                            <div class="absolute left-6 w-5 h-5 bg-accent rounded-full border-4 border-primary"></div>
-                            <div class="ml-16 glass-effect p-6 rounded-2xl flex-1">
-                                <h3 class="font-playfair text-2xl font-bold mb-2 text-accent">Day 1</h3>
-                                <h4 class="text-xl font-semibold mb-3">How the Web Works & Setting Up</h4>
-                                <p class="opacity-90">Learn what a website is, understand frontend vs backend, and set up your coding environment.</p>
+        <!-- Important Points Section -->
+        <section class="mb-16 slide-up">
+            <h2 class="font-calligraffitti text-5xl font-bold mb-8 text-center">Important Points</h2>
+
+            <div class="space-y-6">
+                <div class="card-primary p-6 rounded-lg">
+                    <div class="flex items-start">
+                        <i class="fas fa-exclamation-triangle text-2xl mr-4 mt-1"></i>
+                        <div>
+                            <h3 class="font-edu-nsw text-2xl font-semibold mb-3">Don't Treat Web Development as the Only
+                                Goal</h3>
+                            <p class="leading-relaxed">In 2025, AI tools make building websites easier than ever. Web
+                                development is a great starting point for your software journey, but don't get stuck
+                                here—use it as a foundation and keep exploring other tech fields.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-primary p-6 rounded-lg">
+                    <div class="flex items-start">
+                        <i class="fas fa-info-circle text-2xl mr-4 mt-1"></i>
+                        <div>
+                            <h3 class="font-edu-nsw text-2xl font-semibold mb-3">HTML & CSS Are Just the Basics</h3>
+                            <p class="leading-relaxed">Knowing only HTML and CSS is like knowing the alphabet but not
+                                being able to write a story. Many beginners stop here and think they're web developers,
+                                but real web development goes way beyond that.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-primary p-6 rounded-lg">
+                    <div class="flex items-start">
+                        <i class="fas fa-graduation-cap text-2xl mr-4 mt-1"></i>
+                        <div>
+                            <h3 class="font-edu-nsw text-2xl font-semibold mb-3">Learn for Free</h3>
+                            <p class="leading-relaxed">You don't need to spend money—YouTube is packed with quality
+                                tutorials, and AI tools like ChatGPT can answer your questions instantly.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-primary p-6 rounded-lg">
+                    <div class="flex items-start">
+                        <i class="fas fa-robot text-2xl mr-4 mt-1"></i>
+                        <div>
+                            <h3 class="font-edu-nsw text-2xl font-semibold mb-3">Use AI Smartly</h3>
+                            <p class="leading-relaxed">Don't feel guilty about using AI. In the real world, developers
+                                use AI to speed up their work. Learn how to get things done with AI—this is a must-have
+                                skill now.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Terminologies Section -->
+        <section class="mb-16 slide-up">
+            <h2 class="font-calligraffitti text-5xl font-bold mb-8 text-center">Web Development Terminologies</h2>
+            <p class="text-lg mb-8 text-center italic">(Informal Explanations)</p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="card-secondary p-5 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-globe text-xl mr-3"></i>
+                        <h3 class="font-edu-nsw text-xl font-semibold">Website</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed">A bunch of web pages linked together, like an online brochure or
+                        shop (think Wikipedia, your school's homepage).</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-mobile-alt text-xl mr-3"></i>
+                        <h3 class="font-edu-nsw text-xl font-semibold">Web App</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed">A website that lets you do stuff, not just read stuff. For
+                        example, Gmail, Google Docs, or Netflix—where you interact, fill forms, or watch videos.</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-bullseye text-xl mr-3"></i>
+                        <h3 class="font-edu-nsw text-xl font-semibold">Landing Page</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed">A single page designed to get you to do one thing—like sign up,
+                        buy something, or download an app. You usually get here from an ad or email.</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-eye text-xl mr-3"></i>
+                        <h3 class="font-edu-nsw text-xl font-semibold">Frontend</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed">Everything you see and interact with on a website—buttons,
+                        images, text, colors. It's like the shop window and the shelves.</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-cogs text-xl mr-3"></i>
+                        <h3 class="font-edu-nsw text-xl font-semibold">Backend</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed">The behind-the-scenes part that handles data, user accounts, and
+                        logic. It's like the kitchen in a restaurant—you don't see it, but it makes everything work.</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-plug text-xl mr-3"></i>
+                        <h3 class="font-edu-nsw text-xl font-semibold">API</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed">A way for different apps or sites to talk to each other and share
+                        data. For example, when a weather app shows you live weather from another service.</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-database text-xl mr-3"></i>
+                        <h3 class="font-edu-nsw text-xl font-semibold">Database</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed">Where all the data lives—like usernames, messages, or product
+                        lists. Think of it as a giant digital filing cabinet.</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-code text-xl mr-3"></i>
+                        <h3 class="font-edu-nsw text-xl font-semibold">Vanilla JavaScript</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed">Plain JavaScript without any extra frameworks or libraries. It's
+                        like cooking with just salt and pepper before adding fancy spices.</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-file-code text-xl mr-3"></i>
+                        <h3 class="font-edu-nsw text-xl font-semibold">JSON</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed">A simple way to store and send data, kind of like a digital
+                        version of a form you fill out.</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-edit text-xl mr-3"></i>
+                        <h3 class="font-edu-nsw text-xl font-semibold">IDE</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed">The software where you write your code (like VS Code, Sublime
+                        Text, or even Notepad++). It's your digital workspace.</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-layer-group text-xl mr-3"></i>
+                        <h3 class="font-edu-nsw text-xl font-semibold">Framework</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed">A set of tools and rules that make building websites/apps faster
+                        and easier (like React, Angular, or Django).</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-book text-xl mr-3"></i>
+                        <h3 class="font-edu-nsw text-xl font-semibold">Library</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed">A collection of pre-written code you can use to avoid reinventing
+                        the wheel (like jQuery, Lodash).</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-code-branch text-xl mr-3"></i>
+                        <h3 class="font-edu-nsw text-xl font-semibold">Version Control</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed">A way to track changes in your code and collaborate with others
+                        (Git is the most popular tool).</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-mobile text-xl mr-3"></i>
+                        <h3 class="font-edu-nsw text-xl font-semibold">Responsive Design</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed">Making sure your website looks good on any device—phone, tablet,
+                        or computer.</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-window-maximize text-xl mr-3"></i>
+                        <h3 class="font-edu-nsw text-xl font-semibold">Single Page Application (SPA)</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed">A web app that loads a single page and updates content
+                        dynamically without reloading (like Gmail or Facebook).</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-download text-xl mr-3"></i>
+                        <h3 class="font-edu-nsw text-xl font-semibold">Progressive Web App (PWA)</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed">A web app that feels like a mobile app, works offline, and can be
+                        installed on your phone (like Starbucks or Pinterest).</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-cloud-upload-alt text-xl mr-3"></i>
+                        <h3 class="font-edu-nsw text-xl font-semibold">Deployment</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed">Putting your website or app online so everyone can access it.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stacks Section -->
+        <section class="mb-16 slide-up">
+            <h2 class="font-calligraffitti text-5xl font-bold mb-8 text-center">Tech Stacks You Should Know</h2>
+            <p class="text-lg mb-8 text-center">There are tons of languages and frameworks, but here are the ones that
+                matter most in 2025:</p>
+
+            <div class="space-y-8">
+                <div class="card-primary p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-paint-brush text-2xl mr-4"></i>
+                        <h3 class="font-edu-nsw text-3xl font-bold">Frontend</h3>
+                    </div>
+                    <div class="space-y-3 border-l-2 border-white pl-4">
+                        <p><span class="font-semibold">HTML, CSS, Vanilla JavaScript:</span> The essentials for every
+                            web developer.</p>
+                        <p><span class="font-semibold">Tailwind, Bootstrap, ShadCN:</span> These are CSS frameworks that
+                            make styling faster and easier.</p>
+                        <p><span class="font-semibold">React, Next.js, Angular, Vue.js:</span> The big names for
+                            building modern, interactive websites and apps.</p>
+                    </div>
+                </div>
+
+                <div class="card-primary p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-server text-2xl mr-4"></i>
+                        <h3 class="font-edu-nsw text-3xl font-bold">Backend</h3>
+                    </div>
+                    <div class="space-y-3 border-l-2 border-white pl-4">
+                        <p><span class="font-semibold">Node.js:</span> JavaScript on the server—super popular for
+                            building scalable apps.</p>
+                        <p><span class="font-semibold">Django, Flask:</span> Python-based frameworks, great for quick
+                            development.</p>
+                        <p><span class="font-semibold">Laravel (PHP), Spring Boot (Java):</span> Still used, but not as
+                            trendy for new projects.</p>
+                        <p><span class="font-semibold">Go, Rust:</span> Modern languages gaining popularity for
+                            high-performance backends.</p>
+                    </div>
+                </div>
+
+                <div class="card-primary p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-database text-2xl mr-4"></i>
+                        <h3 class="font-edu-nsw text-3xl font-bold">Database</h3>
+                    </div>
+                    <div class="border-l-2 border-white pl-4">
+                        <p><span class="font-semibold">SQLite, MongoDB, PostgreSQL, MySQL:</span> The main types of
+                            databases you'll see. MongoDB is great for flexible data; PostgreSQL is powerful and
+                            reliable.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Journey Section -->
+        <section class="mb-16 slide-up">
+            <h2 class="font-calligraffitti text-5xl font-bold mb-8 text-center">Your Learning Journey: Step-by-Step</h2>
+            <p class="text-lg mb-8 text-center">Here's a simple path to follow:</p>
+
+            <!-- Progress Flow -->
+            <div class="grid md:grid-cols-4 gap-4 mb-8">
+                <div class="card-secondary p-3 rounded-lg text-center text-sm font-semibold">Basic Frontend</div>
+                <div class="card-secondary p-3 rounded-lg text-center text-sm font-semibold">Basic Backend</div>
+                <div class="card-secondary p-3 rounded-lg text-center text-sm font-semibold">Build 2-3 Projects</div>
+                <div class="card-secondary p-3 rounded-lg text-center text-sm font-semibold">Pick Your Focus</div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="space-y-6">
+                <div class="card-secondary p-6 rounded-lg border-l-4 border-white">
+                    <div class="flex items-start">
+                        <div
+                            class="bg-white text-card-secondary rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 font-bold">
+                            1</div>
+                        <div>
+                            <h3 class="font-edu-nsw text-2xl font-bold mb-3">Day 1: How the Web Works & Setting Up</h3>
+                            <p class="leading-relaxed mb-2">Learn what a website is, what frontend and backend mean, and
+                                set up your coding environment (IDE).</p>
+                            <p class="leading-relaxed">Watch a quick intro video.</p>
+                            <a href="https://www.youtube.com/watch?v=6mbwJ2xhgzM" target="_blank"
+                                class="inline-flex items-center text-sm bg-card-primary text-white px-3 py-2 rounded hover:bg-card-secondary transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                Watch Tutorial (Hindi)
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=vcRmKtL4o_4" target="_blank"
+                                class="inline-flex items-center text-sm bg-card-primary text-white px-3 py-2 rounded hover:bg-card-secondary transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                Watch Tutorial (English)
+                            </a>
+
+                            <div class="bg-white text-card-secondary p-3 rounded-lg mt-3">
+                                <p class="text-sm"><span class="font-semibold">Fun Tip:</span> Press
+                                    CTRL + U to see the frontend code for this web page.</p>
                             </div>
                         </div>
-                        
-                        <!-- Days 2-3 -->
-                        <div class="relative flex items-start">
-                            <div class="absolute left-6 w-5 h-5 bg-accent rounded-full border-4 border-primary"></div>
-                            <div class="ml-16 glass-effect p-6 rounded-2xl flex-1">
-                                <h3 class="font-playfair text-2xl font-bold mb-2 text-accent">Days 2-3</h3>
-                                <h4 class="text-xl font-semibold mb-3">HTML & CSS Mastery</h4>
-                                <p class="opacity-90">Structure web pages with HTML and style them with CSS. Focus on understanding, not memorizing.</p>
+                    </div>
+                </div>
+
+                <div class="card-secondary p-6 rounded-lg border-l-4 border-white">
+                    <div class="flex items-start">
+                        <div
+                            class="bg-white text-card-secondary rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 font-bold">
+                            2</div>
+                        <div>
+                            <h3 class="font-edu-nsw text-2xl font-bold mb-3">Day 2: HTML (3–4 hours is enough)</h3>
+                            <p class="leading-relaxed mb-2">Learn how to structure web pages.</p>
+                            <p class="leading-relaxed mb-2">Use YouTube tutorials.</p>
+                            <a href="https://www.youtube.com/watch?v=k2DSi1zGEc8&t" target="_blank"
+                                class="inline-flex items-center text-sm bg-card-primary text-white px-3 py-2 rounded hover:bg-card-secondary transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                Watch Tutorial (Hindi)
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=pQN-pnXPaVg" target="_blank"
+                                class="inline-flex items-center text-sm bg-card-primary text-white px-3 py-2 rounded hover:bg-card-secondary transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                Watch Tutorial (English)
+                            </a>
+                            <p class="leading-relaxed">Don't waste time memorizing every tag—focus on understanding the
+                                structure.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-secondary p-6 rounded-lg border-l-4 border-white">
+                    <div class="flex items-start">
+                        <div
+                            class="bg-white text-card-secondary rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 font-bold">
+                            3</div>
+                        <div>
+                            <h3 class="font-edu-nsw text-2xl font-bold mb-3">Day 3: CSS (Again, one day is enough)</h3>
+                            <p class="leading-relaxed mb-2">Learn to style your web pages.</p>
+                            <p class="leading-relaxed mb-2">Understand how CSS is written and how it affects HTML.</p>
+                            <a href="https://www.youtube.com/watch?v=wRNinF7YQqQ " target="_blank"
+                                class="inline-flex items-center text-sm bg-card-primary text-white px-3 py-2 rounded hover:bg-card-secondary transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                Watch Tutorial (English)
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=u5-K_ua9sOw" target="_blank"
+                                class="inline-flex items-center text-sm bg-card-primary text-white px-3 py-2 rounded hover:bg-card-secondary transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                Watch Tutorial (Hindi)
+                            </a>
+                            <p class="leading-relaxed">Don't stress about memorizing every property. Learn how to look
+                                things up.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-secondary p-6 rounded-lg border-l-4 border-white">
+                    <div class="flex items-start">
+                        <div
+                            class="bg-white text-card-secondary rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 font-bold">
+                            4</div>
+                        <div>
+                            <h3 class="font-edu-nsw text-2xl font-bold mb-3">Day 4: Build Your First Site</h3>
+                            <p class="leading-relaxed mb-2">Search for beginner HTML & CSS project tutorials (like
+                                building a personal portfolio or a simple landing page).</p>
+                            <p class="leading-relaxed">Code along with the videos—don't just watch.</p>
+                            <a href="https://www.youtube.com/watch?v=u5-K_ua9sOw" target="_blank"
+                                class="inline-flex items-center text-sm bg-card-primary text-white px-3 py-2 rounded hover:bg-card-secondary transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                Pick random videos from this playlist and code.
+                            </a>
+                            <div class="bg-white text-card-secondary p-3 rounded-lg mt-3">
+                                <p class="text-sm"><span class="font-semibold">Note:</span> If you're busy, you can
+                                    spread these four days over a week. But if you take much longer, you're probably
+                                    overthinking it.</p>
                             </div>
                         </div>
-                        
-                        <!-- Days 5-10 -->
-                        <div class="relative flex items-start">
-                            <div class="absolute left-6 w-5 h-5 bg-accent rounded-full border-4 border-primary"></div>
-                            <div class="ml-16 glass-effect p-6 rounded-2xl flex-1">
-                                <h3 class="font-playfair text-2xl font-bold mb-2 text-accent">Days 5-10</h3>
-                                <h4 class="text-xl font-semibold mb-3">JavaScript Fundamentals</h4>
-                                <p class="opacity-90">Learn programming basics, DOM manipulation, and interactive web development.</p>
-                            </div>
+                    </div>
+                </div>
+
+                <div class="card-secondary p-6 rounded-lg border-l-4 border-white">
+                    <div class="flex items-start">
+                        <div
+                            class="bg-white text-card-secondary rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 font-bold">
+                            5</div>
+                        <div>
+                            <h3 class="font-edu-nsw text-2xl font-bold mb-3">Days 5–10: JavaScript Basics</h3>
+                            <p class="leading-relaxed mb-2">Start with programming basics: variables, loops, if
+                                statements, functions, etc.</p>
+                            <p class="leading-relaxed mb-2">Learn DOM manipulation (controlling HTML/CSS with
+                                JavaScript).</p>
+                            <p class="leading-relaxed mb-2">Skip advanced topics like async programming for now.</p>
+                            <p class="leading-relaxed">Practice with small tasks, like making a button show/hide text or
+                                changing colors on click.</p>
+                            <a href="https://www.youtube.com/watch?v=427pAhy9dI8" target="_blank"
+                                class="inline-flex items-center text-sm bg-card-primary text-white px-3 py-2 rounded hover:bg-card-secondary transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                Javascript Tutorial(Hindi)
+                            </a>
                         </div>
-                        
-                        <!-- Days 10-15 -->
-                        <div class="relative flex items-start">
-                            <div class="absolute left-6 w-5 h-5 bg-accent rounded-full border-4 border-primary"></div>
-                            <div class="ml-16 glass-effect p-6 rounded-2xl flex-1">
-                                <h3 class="font-playfair text-2xl font-bold mb-2 text-accent">Days 10-15</h3>
-                                <h4 class="text-xl font-semibold mb-3">Build Your First Project</h4>
-                                <p class="opacity-90">Create a creative project from scratch - to-do list, quiz app, or weather dashboard.</p>
+                    </div>
+                </div>
+
+                <div class="card-secondary p-6 rounded-lg border-l-4 border-white">
+                    <div class="flex items-start">
+                        <div
+                            class="bg-white text-card-secondary rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 font-bold">
+                            6</div>
+                        <div>
+                            <h3 class="font-edu-nsw text-2xl font-bold mb-3">Days 10–15: Build a Big Frontend Project
+                            </h3>
+                            <p class="leading-relaxed mb-2">Pick a creative project (like a to-do list, quiz app, or
+                                weather dashboard).</p>
+                            <p class="leading-relaxed mb-2">Build it from scratch without copy-pasting code from
+                                tutorials or AI.</p>
+                            <p class="leading-relaxed">When stuck, use documentation or Stack Overflow—this is where
+                                real learning happens.</p>
+                            <div class="bg-white text-card-secondary p-3 rounded-lg mt-3">
+                                <p class="text-sm"><span class="font-semibold">Take a Break:</span> After finishing your
+                                    project, give yourself a day off. You've earned it! Next, you'll dive into backend
+                                    development.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-secondary">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="font-playfair text-5xl font-bold mb-8">
-                Ready to <span class="font-dancing text-accent">Start Coding?</span>
-            </h2>
-            <p class="text-xl mb-12 max-w-2xl mx-auto opacity-90">
-                Join thousands of developers who've transformed their careers with this comprehensive roadmap.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <button class="bg-accent hover:bg-opacity-80 text-primary font-semibold px-10 py-4 rounded-full transition-all duration-300 transform hover:scale-105">
-                    Download Full Roadmap
-                </button>
-                <div class="flex items-center space-x-4 text-accent">
-                    <span class="font-semibold">By Sanat Jha</span>
-                    <a href="https://sanatjha.me" class="hover:underline">sanatjha.me</a>
+        <!-- Backend Development Section -->
+        <section class="mb-16 slide-up">
+            <h2 class="font-calligraffitti text-5xl font-bold mb-8 text-center">Backend Development</h2>
+            <p class="text-lg mb-8 text-center">So, you're ready to go beyond the basics and dive into backend
+                development? Awesome! Here's how to make sense of your options, what to focus on, and some extra tips to
+                help you become a well-rounded backend developer.</p>
+
+            <div class="card-primary p-6 rounded-lg mb-8">
+                <h3 class="font-edu-nsw text-3xl font-bold mb-4 flex items-center">
+                    <i class="fas fa-route text-2xl mr-4"></i>
+                    Choosing Your Backend Path
+                </h3>
+                <p class="leading-relaxed mb-4">You have two main choices to kick off your backend journey:</p>
+
+                <div class="space-y-4">
+                    <div class="bg-white text-card-primary p-4 rounded-lg">
+                        <h4 class="font-edu-nsw font-semibold mb-2">Node.js & Express:</h4>
+                        <p class="text-sm leading-relaxed">If you're comfortable with JavaScript and want to stick with
+                            one language for both frontend and backend, Node.js with Express is a solid pick. It's fast,
+                            widely used, and has a huge community.</p>
+                    </div>
+
+                    <div class="bg-white text-card-primary p-4 rounded-lg">
+                        <h4 class="font-edu-nsw font-semibold mb-2">Django & Flask:</h4>
+                        <p class="text-sm leading-relaxed">If you're curious about Python, Django and Flask are your
+                            go-to frameworks. Python is beginner-friendly and integrates well with AI and data science
+                            tools. If you're new to Python, set aside 2–3 days to get the basics down before diving into
+                            backend frameworks.</p>
+                    </div>
+                </div>
+
+                <p class="leading-relaxed mt-4">Both paths are great, and the learning process is pretty similar after
+                    the initial setup. Just pick one and stick with it for now.</p>
+            </div>
+
+            <div class="card-primary p-6 rounded-lg mb-8">
+                <h3 class="font-edu-nsw text-3xl font-bold mb-4 flex items-center">
+                    <i class="fas fa-graduation-cap text-2xl mr-4"></i>
+                    How to Learn Backend (and What to Focus On)
+                </h3>
+
+                <div class="space-y-4">
+                    <p><span class="font-semibold">Dedicate about a month:</span> Backend takes longer than frontend,
+                        but you can speed things up with consistent effort. Don't rush—quality matters more than speed.
+                    </p>
+
+                    <p><span class="font-semibold">Pick a good YouTube playlist:</span> Find a playlist that covers your
+                        chosen stack (for example, "Code With Harry" for Django, or "Academind" for Node.js/Express).
+                        Move step by step, and don't get overwhelmed by new terms—they'll make sense with practice.</p>
+
+                    <div class="mt-6">
+                        <h4 class="font-edu-nsw font-semibold mb-3">Key topics to cover:</h4>
+                        <ul class="space-y-2 text-sm border-l-2 border-white pl-4">
+                            <li class="flex items-start"><span class="text-white mr-2">•</span>How the backend talks to
+                                the frontend using APIs.</li>
+                            <li class="flex items-start"><span class="text-white mr-2">•</span>What requests are (like
+                                GET, POST, PUT, DELETE) and how they work.</li>
+                            <li class="flex items-start"><span class="text-white mr-2">•</span>Authentication (making
+                                sure users are who they say they are).</li>
+                            <li class="flex items-start"><span class="text-white mr-2">•</span>Error handling and
+                                validation.</li>
+                            <li class="flex items-start"><span class="text-white mr-2">•</span>Security basics (hashing
+                                passwords, using HTTPS, sanitizing input).</li>
+                            <li class="flex items-start"><span class="text-white mr-2">•</span>Clean code practices—keep
+                                your code readable and organized.</li>
+                            <li class="flex items-start"><span class="text-white mr-2">•</span>Testing your code and
+                                using version control (like Git).</li>
+                            <li class="flex items-start"><span class="text-white mr-2">•</span>Deployment basics—how to
+                                put your app online.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Databases Section -->
+        <section class="mb-16 slide-up">
+            <h2 class="font-calligraffitti text-5xl font-bold mb-8 text-center">Databases: The Backbone of Backend</h2>
+            <p class="text-lg mb-8 text-center">Learning databases is a must for backend development. Here's what you
+                need to know:</p>
+
+            <div class="space-y-8">
+                <!-- SQL Databases -->
+                <div class="card-secondary p-6 rounded-lg">
+                    <h3 class="font-edu-nsw text-3xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-table text-2xl mr-4"></i>
+                        SQL Databases (Relational)
+                    </h3>
+                    <p class="leading-relaxed mb-4">Data is stored in tables with rows and columns, like a spreadsheet.
+                        Great for structured data (think: user accounts, orders, inventory).</p>
+                    <p class="mb-4"><span class="font-semibold">Examples:</span> MySQL, PostgreSQL, SQLite, Microsoft
+                        SQL Server, Oracle Database.</p>
+
+                    <div class="table-container p-4 rounded-lg">
+                        <h4 class="font-edu-nsw font-semibold mb-3">Sample Table:</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="border-b border-white">
+                                        <th class="text-left p-2">id</th>
+                                        <th class="text-left p-2">name</th>
+                                        <th class="text-left p-2">email</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-gray-400">
+                                        <td class="p-2">1</td>
+                                        <td class="p-2">Alice</td>
+                                        <td class="p-2">alice@email.com</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-400">
+                                        <td class="p-2">2</td>
+                                        <td class="p-2">Bob</td>
+                                        <td class="p-2">bob@email.com</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NoSQL Databases -->
+                <div class="card-secondary p-6 rounded-lg">
+                    <h3 class="font-edu-nsw text-3xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-project-diagram text-2xl mr-4"></i>
+                        NoSQL Databases (Non-Relational)
+                    </h3>
+                    <p class="leading-relaxed mb-6">Flexible structure, great for unstructured or rapidly changing data.
+                        Four main types:</p>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-white text-card-secondary p-4 rounded-lg">
+                            <h4 class="font-edu-nsw font-semibold mb-2">Key-Value:</h4>
+                            <p class="text-sm mb-2">Simple pairs, like a dictionary (e.g., Redis, DynamoDB).</p>
+                            <div class="code-block p-2 rounded text-xs">{ "user123": "Alice" }</div>
+                        </div>
+
+                        <div class="bg-white text-card-secondary p-4 rounded-lg">
+                            <h4 class="font-edu-nsw font-semibold mb-2">Document:</h4>
+                            <p class="text-sm mb-2">Stores data as JSON-like documents (e.g., MongoDB, CouchDB).</p>
+                            <div class="code-block p-2 rounded text-xs">{ "id": 1, "name": "Alice", "email":
+                                "alice@email.com" }</div>
+                        </div>
+
+                        <div class="bg-white text-card-secondary p-4 rounded-lg">
+                            <h4 class="font-edu-nsw font-semibold mb-2">Column:</h4>
+                            <p class="text-sm mb-2">Stores data in columns instead of rows, good for analytics (e.g.,
+                                Apache Cassandra, HBase).</p>
+                            <div class="code-block p-2 rounded text-xs">Each column can have different data types and is
+                                optimized for queries like SUM, AVG.</div>
+                        </div>
+
+                        <div class="bg-white text-card-secondary p-4 rounded-lg">
+                            <h4 class="font-edu-nsw font-semibold mb-2">Graph:</h4>
+                            <p class="text-sm mb-2">Stores data as nodes and relationships, perfect for social networks
+                                (e.g., Neo4j, JanusGraph).</p>
+                            <div class="code-block p-2 rounded text-xs">Nodes represent people, edges represent
+                                friendships.</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <h4 class="font-edu-nsw font-semibold mb-3">Why Learn Both?</h4>
+                        <p class="text-sm leading-relaxed mb-2"><span class="font-semibold">SQL</span> is perfect for
+                            apps where data relationships matter, like banking or e-commerce.</p>
+                        <p class="text-sm leading-relaxed"><span class="font-semibold">NoSQL</span> is great for
+                            flexible, high-speed, or massive data apps, like social media, real-time analytics, or IoT.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specialization Section -->
+        <section class="mb-16 slide-up">
+            <h2 class="font-calligraffitti text-5xl font-bold mb-8 text-center">What's Next? Picking Your Specialization
+            </h2>
+            <p class="text-lg mb-8 text-center">Once you've built a few backend projects and understand how everything
+                fits together, you get to choose your path:</p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="card-primary p-6 rounded-lg text-center">
+                    <i class="fas fa-paint-brush text-3xl mb-4"></i>
+                    <h3 class="font-edu-nsw text-2xl font-bold mb-4">Frontend Developer</h3>
+                    <p class="text-sm leading-relaxed">Focus on the visual and interactive parts of websites and apps.
+                    </p>
+                </div>
+
+                <div class="card-primary p-6 rounded-lg text-center">
+                    <i class="fas fa-server text-3xl mb-4"></i>
+                    <h3 class="font-edu-nsw text-2xl font-bold mb-4">Backend Developer</h3>
+                    <p class="text-sm leading-relaxed">Specialize in data, APIs, and server logic.</p>
+                </div>
+
+                <div class="card-primary p-6 rounded-lg text-center">
+                    <i class="fas fa-layer-group text-3xl mb-4"></i>
+                    <h3 class="font-edu-nsw text-2xl font-bold mb-4">Full Stack Developer</h3>
+                    <p class="text-sm leading-relaxed">Do both! Like an all-rounder in cricket—not necessarily the best
+                        at batting or bowling, but good enough at both to handle any situation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extra Tips Section -->
+        <section class="mb-16 slide-up">
+            <h2 class="font-calligraffitti text-5xl font-bold mb-8 text-center">Extra Tips & Important Points</h2>
+
+            <div class="space-y-6">
+                <div class="card-secondary p-5 rounded-lg">
+                    <h3 class="font-edu-nsw text-xl font-semibold mb-2 flex items-center">
+                        <i class="fas fa-globe text-lg mr-3"></i>
+                        Understand How the Web Works
+                    </h3>
+                    <p class="text-sm leading-relaxed">Learn the basics of how browsers, servers, and the internet
+                        communicate (HTTP, DNS, client-server model).</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <h3 class="font-edu-nsw text-xl font-semibold mb-2 flex items-center">
+                        <i class="fas fa-code text-lg mr-3"></i>
+                        Programming Fundamentals Matter
+                    </h3>
+                    <p class="text-sm leading-relaxed">Make sure you're comfortable with basic programming concepts and
+                        problem-solving before diving deep into frameworks.</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <h3 class="font-edu-nsw text-xl font-semibold mb-2 flex items-center">
+                        <i class="fas fa-shield-alt text-lg mr-3"></i>
+                        Security Is Non-Negotiable
+                    </h3>
+                    <p class="text-sm leading-relaxed">Always hash passwords, use HTTPS, and validate user input to
+                        prevent common attacks like SQL injection and XSS.</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <h3 class="font-edu-nsw text-xl font-semibold mb-2 flex items-center">
+                        <i class="fas fa-broom text-lg mr-3"></i>
+                        Write Clean, Maintainable Code
+                    </h3>
+                    <p class="text-sm leading-relaxed">Stick to best practices like DRY (Don't Repeat Yourself), KISS
+                        (Keep It Simple), and separation of concerns (organize code into logical modules).</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <h3 class="font-edu-nsw text-xl font-semibold mb-2 flex items-center">
+                        <i class="fas fa-vial text-lg mr-3"></i>
+                        Testing & Documentation
+                    </h3>
+                    <p class="text-sm leading-relaxed">Test your code and document your APIs—this saves time and
+                        headaches later.</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <h3 class="font-edu-nsw text-xl font-semibold mb-2 flex items-center">
+                        <i class="fas fa-code-branch text-lg mr-3"></i>
+                        Version Control
+                    </h3>
+                    <p class="text-sm leading-relaxed">Learn Git for tracking changes and collaborating with others.</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <h3 class="font-edu-nsw text-xl font-semibold mb-2 flex items-center">
+                        <i class="fas fa-cloud text-lg mr-3"></i>
+                        DevOps & Cloud Basics
+                    </h3>
+                    <p class="text-sm leading-relaxed">Get familiar with deploying apps using tools like Docker, AWS, or
+                        Azure. Automation and cloud skills are in high demand.</p>
+                </div>
+
+                <div class="card-secondary p-5 rounded-lg">
+                    <h3 class="font-edu-nsw text-xl font-semibold mb-2 flex items-center">
+                        <i class="fas fa-lightbulb text-lg mr-3"></i>
+                        Stay Curious
+                    </h3>
+                    <p class="text-sm leading-relaxed">Backend tech is always evolving—keep learning about new tools
+                        like microservices, serverless, and AI integrations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Words Section -->
+        <section class="mb-16 slide-up">
+            <div class="card-primary p-8 rounded-lg text-center">
+                <i class="fas fa-trophy text-4xl mb-6"></i>
+                <h2 class="font-calligraffitti text-5xl font-bold mb-6">Final Words</h2>
+                <p class="text-lg leading-relaxed mb-4">Congratulations! By reaching this stage, you now understand how
+                    web apps are built from the ground up. Whether you want to focus on frontend, backend, or become a
+                    full stack developer, you have a solid foundation to build on.</p>
+                <p class="text-lg leading-relaxed font-edu-nsw text-xl">The journey is yours—keep building, keep
+                    learning, and have fun bringing your ideas to life!</p>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="py-12 bg-primary">
-        <div class="container mx-auto px-6 text-center">
-            <p class="opacity-70">
-                © 2025 Web Development Roadmap. Built with ❤️ for aspiring developers.
-            </p>
+    <footer class="bg-text-main text-bg-main py-8 text-center">
+        <div class="container mx-auto px-6">
+            <p class="font-calligraffitti text-xl">Happy Coding! 🚀</p>
+            <p class="text-sm opacity-70 mt-2">© 2025 Web Development Roadmap by Sanat Jha</p>
         </div>
     </footer>
 
     <script>
-        // Intersection Observer for animations
+        // Intersection Observer for scroll animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -312,17 +976,18 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, observerOptions);
 
-        // Observe all animated elements
-        document.querySelectorAll('.slide-in-left, .slide-in-right, .fade-in-up').forEach(el => {
+        // Observe all slide-up elements
+        document.querySelectorAll('.slide-up').forEach(el => {
             observer.observe(el);
         });
 
-        // Smooth scrolling for anchor links
+        // Smooth scrolling for internal links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -335,36 +1000,7 @@
                 }
             });
         });
-
-        // Dynamic gradient background
-        let mouseX = 0;
-        let mouseY = 0;
-        
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX / window.innerWidth;
-            mouseY = e.clientY / window.innerHeight;
-            
-            const heroSection = document.querySelector('.gradient-bg');
-            if (heroSection) {
-                heroSection.style.background = `
-                    radial-gradient(circle at ${mouseX * 100}% ${mouseY * 100}%, 
-                    rgba(199, 125, 255, 0.3) 0%, 
-                    transparent 50%),
-                    linear-gradient(135deg, #10002b 0%, #3c096c 35%, #7b2cbf 70%, #c77dff 100%)
-                `;
-            }
-        });
-
-        // Tech badge hover effects
-        document.querySelectorAll('.tech-badge').forEach(badge => {
-            badge.addEventListener('mouseenter', function() {
-                this.style.transform = 'scale(1.05) rotate(1deg)';
-            });
-            
-            badge.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1) rotate(0deg)';
-            });
-        });
     </script>
 </body>
+
 </html>
